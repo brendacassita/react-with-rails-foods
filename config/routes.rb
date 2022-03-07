@@ -5,11 +5,16 @@ Rails.application.routes.draw do
   # root "articles#index"
 
 
-namespace :api do
-  get 'foods',          to:'foods#index'     # returns all foods
-  get 'foods/:id',      to:'foods#show'      # return 1 food from db match id:
-  post 'foods',         to: 'foods#create'
-  put 'foods/:id',      to: 'foods#update'
-  delete 'foods/:id',   to: 'foods#destroy'
+  namespace :api do
+  get 'foods',          to:'foods#index'      # returns all foods 
+  get 'foods/:id',      to:'foods#show'       # return 1 food from db match id:
+  post 'foods',         to: 'foods#create'    # client send in params{food:{name,price}} create food
+  put 'foods/:id',      to: 'foods#update'    # client send in params{food:{name,price}} update food by id
+  delete 'foods/:id',   to: 'foods#destroy'   # deletes by id
   end
 end
+
+
+
+
+# resources :foods
