@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Food.destroy_all
+
+Food.create(name: "Tacos", price: 2.99)
+Food.create(name: "Pizza", price: 5.99)
+Food.create(name: "Burger", price: 15.99)
+Food.create(name: "Pasta", price: 18.99)
+Food.create(name: "Steak", price: 29.99)
+puts "seeded foods size: #{Food.all.size}"
+
+# in terminal
+# rails db:seed
+# seeded foods size 5
