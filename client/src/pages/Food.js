@@ -8,10 +8,10 @@ const Food = (props) =>{
   const {id, name, price} = props
   return(
     <div className="border">
-      <h1>Food:</h1>
-      <p>{name}</p>
-      <p>{price}</p>
-      <p>{id}</p>
+      <h1>Food:{name}</h1>
+      <p>ID:{id}</p>
+      <p>${price}</p>
+      
 
     <div className="border">
       <p onClick={()=>navigate(`/foods${id}/edit`)}>edit</p>

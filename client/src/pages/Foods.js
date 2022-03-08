@@ -8,7 +8,7 @@ const Foods = (props)=>{
         // runs when component mounts 
         console.log('Foods mounted')
       },[])
-      console.log(foods)
+      
     const renderFoods = ()=> {
       console.log(foods)
       return foods.map((food)=>{

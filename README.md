@@ -1,24 +1,116 @@
-# README
+# STEPS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+# RAILS PORTION
 
-* System dependencies
+ - create rails app
 
-* Configuration
+ - create thing model
 
-* Database creation
+ - seed database
 
-* Database initialization
+ - create things controller/s
 
-* How to run the test suite
+ - add routes in routes/rb
 
-* Services (job queues, cache servers, search engines, etc.)
+ - fill out controller.
 
-* Deployment instructions
+ - test with postman
 
-* ...
+
+
+# SETTING UP RAILS AND REACT
+
+1. in your rails directory in terminal you can either use create react app or
+
+clone a starter react project down. we are going to use a convention
+
+of naming this folder client
+
+```
+
+// option one 
+
+$ yarn create react-app client 
+
+$ cd
+
+$ yarn start
+
+
+
+// option two 
+
+$ git clone git@github.com:jimibue/router-context-starter-sp22.git client
+
+$ cd client
+
+$ rm -rf ./git
+
+$ yarn
+
+$ yarn start
+
+```
+
+
+
+2. add proxy in client/package.json, for this to work we will always have rails run on port 3001 ie `rails s -p 3001`
+
+```
+
+....
+
+"proxy": "http://localhost:3001",
+
+"scripts": {
+
+ ....
+
+``` 
+
+
+
+3. start rails server (do this in your rails project directory)
+
+```
+
+rails s -p 3001
+
+```
+
+
+
+
+# REACT 
+
+
+
+ - Routes/Component/Nav (React Router UI/UX)
+
+ - FoodForm (new/edit)
+
+ - Foods - list all foods
+
+ - Food - renders a single food
+
+ - FoodShow - render a single food on its own page (React Router)
+
+ - CRUD in our Provider 
+
+ - axios calls (api call to interact with rails)
+
+ - updating our state
+
+ - UI
+
+ - setting up forms
+
+ - connecting our state to UI
+
+ - Error handling
+
+ - UX loaders/nav
+
+ - styling 

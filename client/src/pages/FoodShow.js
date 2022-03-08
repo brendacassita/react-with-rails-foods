@@ -29,7 +29,6 @@ const FoodShow = (props) =>{
 <div className="border">
   <h1>FoodShow</h1>
   <p>id: {params.id}</p>
-  <p>foodFromApi</p>
   <code>{JSON.stringify(foodFromApi)}</code>
 </div>
   )
