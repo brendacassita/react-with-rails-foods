@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   post 'foods',         to: 'foods#create'    # client send in params{food:{name,price}} create food
   put 'foods/:id',      to: 'foods#update'    # client send in params{food:{name,price}} update food by id
   delete 'foods/:id',   to: 'foods#destroy'   # deletes by id
+
+
+  get 'drinks',         to: 'drinks#index'    # let res =  await axios.get('api/drinks')
+  get 'drinks/:id',     to: 'drinks#show'     # let res =  await axios.get('api/drinks/1')
+  post 'drinks',        to: 'drinks#create'   # let res =  await axios.post('api/drinks', {name: drink here})
+  put 'drinks/:id',     to: 'drinks#update'   # let res =  await axios.put('api/drinks', {id: 1, name: updated})
+  delete 'drinks/:id',  to: 'drinks#destroy'  # let res =  await axios.delete('api/drinks/1')
   end
 end
 
