@@ -22,7 +22,6 @@ Drink.create(name:"Juice")
 Drink.create(name:"Soda")
 Drink.create(name:"Wine")
 Drink.create(name:"Beer")
-end
 
 
 puts "seeded drinks size: #{Drink.all.size}"

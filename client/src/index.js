@@ -11,6 +11,7 @@ import Home from "./pages/Home";
 import Foods from "./pages/Foods";
 import FoodForm from "./pages/FoodForm";
 import FoodShow from "./pages/FoodShow";
+import Drinks from "./pages/Drinks";
 
 
 const NotFound = ()=>{
@@ -25,6 +26,7 @@ ReactDOM.render(
           <Route path="/about" element={<About />} />
           <Route path="/home" element={<Home />} />
           <Route path="/foods" element={<Foods />} />
+          <Route path="/drinks" element={<Drinks />} />
           <Route path="/foods/new" element={<FoodForm />} />
           <Route path="/foods/:id" element={<FoodShow />} />
           <Route path="/foods/:id/edit" element={<FoodForm/>} />
