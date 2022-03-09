@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 // createContext HERE this doing a lot for
 // create Context/Provider, get and set out data
 export const DataContext = React.createContext();
 
 const DataProvider = (props) => {
+  // const navigate =  useNavigate()
   const [foods, setFoods] = useState();
   // onMount i want to run getFoods
 
@@ -25,6 +27,29 @@ const DataProvider = (props) => {
     }
   }
 
+  const createFood = async (food, navigate) =>{
+    try{
+      let res = await axios.post('/api/foods', food)
+      setFoods([res.data, ...foods])
+      navigate('/foods')
+    }catch(err){
+      console.log(err)
+      console.log(err.response)
+    }
+  }
+
+  const updateFood = async (food, navigate)=>{
+    console.log('food:', food)
+    try{
+      let res = await axios.put(`/api/foods/${food.id}`, food)
+      const updatedFoods = foods.map(f => f.id === res.data.id ? res.data : f)
+      setFoods(updatedFoods)
+      navigate('/foods')
+      console.log(res)
+    }catch(err){
+      console.log(err)
+    }
+  }
   const deleteFood = async (id)=>{
     try{
       // step 1
@@ -41,7 +66,9 @@ const DataProvider = (props) => {
   const foodProviderThing = {
     getFoods,
     foods,
-    deleteFood
+    deleteFood,
+    createFood,
+    updateFood
     
 };
   // return the provider which will wrap my all app

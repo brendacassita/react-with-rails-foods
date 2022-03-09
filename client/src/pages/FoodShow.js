@@ -5,12 +5,13 @@ import { DataContext } from "../providers/DataProvider";
 
 const FoodShow = (props) =>{
   const params = useParams()
+  const {state} = useLocation()
+  
   useEffect(()=>{
-    getFoodFromApi()
-    
+    getFoodFromApi()  
   }, [])
   
-
+ 
   const [foodFromApi, setFoodFromApi] = useState(null)
 
   const getFoodFromApi = async ()=>{
@@ -23,12 +24,10 @@ const FoodShow = (props) =>{
   }
 
 
-
-
   return(
 <div className="border">
   <h1>FoodShow</h1>
-  <p>id: {params.id}</p>
+  {/* <p>id: {params.id}</p> */}
   <code>{JSON.stringify(foodFromApi)}</code>
 </div>
   )

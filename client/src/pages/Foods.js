@@ -19,7 +19,7 @@ const Foods = (props)=>{
         <div className='border'>
             <h1>Foods</h1>
             <div className='border'>
-                <code>{renderFoods()}</code>
+                <code>{foods && renderFoods()}</code> {/*if foods exists it renders food*/}
             </div>
             <div className='border'>
                 <code>{JSON.stringify(foods)}</code>

@@ -14,9 +14,9 @@ const Food = (props) =>{
       
 
     <div className="border">
-      <p onClick={()=>navigate(`/foods${id}/edit`)}>edit</p>
+      <p onClick={()=>navigate(`/foods/${id}/edit`, {state: props})}>edit</p>
       <p onClick={()=>deleteFood(id)}>delete</p>
-      <p onClick={()=>navigate(`/foods${id}`, {state: props})}>show</p>
+      <p onClick={()=>navigate(`/foods/${id}`, {state: props})}>show</p>
 
 
 </div>
